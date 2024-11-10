@@ -1,9 +1,4 @@
-const div = document.querySelector("div")
-gsap.to(div,{
-    textContent:"🫡",
-    duration:3,
-    delay:2
-})
+
 
 const emojiDictionary = {
     // Emotions and Reactions
@@ -34,3 +29,4 @@ const emojiDictionary = {
     "trophy": "🏆", "bag": "👜", "flag": "🏳️", "glasses": "👓", "backpack": "🎒", "watch": "⌚"
   };
   
+
