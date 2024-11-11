@@ -39,8 +39,28 @@ body, html{
 .hero-section-heading{
     z-index: 1;
     color: white;
+    font-size: 50px;
+    scale: 90%;
+}
+
+.hero-section-heading h1{
     font-family: "extra-bold";
-    font-size: 70px;
     font-style: italic;
     letter-spacing: -7.5px;
+    /* border: 1px solid red; */
+    font-size: 2.25em;
+    margin-top: -40px;
+    margin-left: 50px;
+}
+
+.hero-section-heading h2{
+    font-family: "semi-bold";
+    font-style: normal;
+    font-size: 1em;
+    /* border: 1px solid green; */
+    letter-spacing: -2.5px;
+}
+
+.hero-section-heading h2:nth-child(2){
+    margin-top: -20px;
 }
