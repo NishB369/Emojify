@@ -7,7 +7,7 @@
 body, html{
     height: 100%;
     width: 100%;
-    background-color: #111;
+    background-color: #000;
 }
 
 @font-face {
@@ -18,6 +18,11 @@ body, html{
 @font-face {
     font-family: "semi-bold";
     src: url(./Montserrat/static/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "regular";
+    src: url(./Montserrat/static/Montserrat-Regular.ttf);
 }
 
 .hero-section{
@@ -47,7 +52,6 @@ body, html{
     font-family: "extra-bold";
     font-style: italic;
     letter-spacing: -7.5px;
-    /* border: 1px solid red; */
     font-size: 2.25em;
     margin-top: -40px;
     margin-left: 50px;
@@ -57,10 +61,105 @@ body, html{
     font-family: "semi-bold";
     font-style: normal;
     font-size: 1em;
-    /* border: 1px solid green; */
     letter-spacing: -2.5px;
 }
 
 .hero-section-heading h2:nth-child(2){
     margin-top: -20px;
+}
+
+.hero-section-heading p{
+    font-family: "regular";
+    font-size: 15px;
+    width: 60%;
+    text-align: center;
+    line-height: 100%;
+    margin-left: 10%;
+    margin-top: -5%;
+}
+
+.hero-section-heading div{
+    font-family: "regular";
+    font-size: 30px;
+    width: 25%;
+    text-align: center;
+    line-height: 100%;
+    margin-left: 80%;
+    margin-top: -5%;
+    background-color: white;
+    border-radius: 50px;
+    padding: 2% 1%;
+    cursor: pointer;
+}
+
+
+.features-section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.features-section-heading{
+    z-index: 1;
+    color: white;
+    font-size: 50px;
+    scale: 60%;
+}
+
+.features-section-heading h1{
+    font-family: "extra-bold";
+    font-style: italic;
+    letter-spacing: -7.5px;
+    font-size: 2.25em;
+    margin-top: -40px;
+    margin-left: 50px;
+}
+
+.features-section-heading h2{
+    font-family: "semi-bold";
+    font-style: normal;
+    font-size: 1em;
+    letter-spacing: -2.5px;
+}
+
+.features-section-heading h2:nth-of-type(2){
+    margin-top: -5%;
+    margin-left: 45%;
+}
+
+.cards-container{
+    width: 75%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.card-front{
+    height: 100%;
+    width: 27.5%;
+    border-radius: 10px;
+    background-color: #ffdc1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+}
+
+.card-front h1{
+    font-family: "extra-bold";
+    font-size: 25px;
+    font-style: italic;
+    color: white;
+}
+
+#cards-container-back{
+    display: none;
 }

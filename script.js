@@ -30,3 +30,39 @@ const emojiDictionary = {
   };
   
 
+
+const rocket_btn = document.querySelector(".hero-section-heading div")
+rocket_btn.addEventListener("mouseenter",function(){
+  rocket_btn_animate()
+})
+rocket_btn.addEventListener("mouseleave",function(){
+  rocket_btn_animate2()
+})
+
+function rocket_btn_animate(){
+  gsap.to(rocket_btn,{
+    textContent:"🔥",
+    duratio:0.5,
+    ease:"power4",
+    scale:1.2
+  })
+}
+
+function rocket_btn_animate2(){
+  gsap.to(rocket_btn,{
+    textContent:"🚀",
+    duratio:0.5,
+    ease:"power4",
+    scale:1
+  })
+}
+
+let cardFrontList = document.querySelectorAll(".card-front")
+cardFrontList.forEach(function(cardFront){
+  cardFront.addEventListener("mouseenter",function(){
+    gsap.to(cardFront, {
+      duration:0.1,
+      
+    })
+  })
+})
