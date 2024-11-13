@@ -122,7 +122,7 @@ let suggestionList = document.querySelectorAll(".suggestion")
 suggestionList.forEach(function(suggestion){
   suggestion.addEventListener("click",function(){
     gsap.to(textArea,{
-      textContent:(suggestion.textContent).trim(),
+      value:(suggestion.textContent).trim(),
       duration:0.1,
       ease:"power4"
     })
