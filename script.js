@@ -33,27 +33,27 @@ const emojiDictionary = {
 
 const rocket_btn = document.querySelector(".hero-section-heading div")
 rocket_btn.addEventListener("mouseenter",function(){
-  rocket_btn_animate()
+  rocket_btn_animate(rocket_btn,1.2)
 })
 rocket_btn.addEventListener("mouseleave",function(){
-  rocket_btn_animate2()
+  rocket_btn_animate2(rocket_btn,1)
 })
 
-function rocket_btn_animate(){
-  gsap.to(rocket_btn,{
+function rocket_btn_animate(x,scale){
+  gsap.to(x,{
     textContent:"🔥",
     duratio:0.5,
     ease:"power4",
-    scale:1.2
+    scale:scale
   })
 }
 
-function rocket_btn_animate2(){
-  gsap.to(rocket_btn,{
+function rocket_btn_animate2(x,scale){
+  gsap.to(x,{
     textContent:"🚀",
     duratio:0.5,
     ease:"power4",
-    scale:1
+    scale:scale
   })
 }
 
@@ -97,5 +97,34 @@ cardFrontList.forEach(function(cardFront, index){
       cardFront.style.display = "none";
       cardFrontList[index-1].style.display = "flex";
     }
+  })
+})
+
+
+const generate_btn = document.querySelector(".text-input-area div")
+generate_btn.addEventListener("click",function(){
+  rocket_btn_animate(generate_btn,1.1)
+})
+
+const textArea = document.querySelector("textarea")
+
+textArea.addEventListener("click",function(){
+  rocket_btn_animate2(generate_btn,1)
+})
+
+document.addEventListener("click", function(event) {
+  if (!generate_btn.contains(event.target)) {
+      rocket_btn_animate2(generate_btn, 1); 
+  }
+});
+
+let suggestionList = document.querySelectorAll(".suggestion")
+suggestionList.forEach(function(suggestion){
+  suggestion.addEventListener("click",function(){
+    gsap.to(textArea,{
+      textContent:(suggestion.textContent).trim(),
+      duration:0.1,
+      ease:"power4"
+    })
   })
 })
