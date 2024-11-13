@@ -33,11 +33,12 @@ body, html{
     justify-content: center;
 }
 
-.hero-section img{
-    height: 100%;
-    width: 100%;
+.hero-section video{
+    height: inherit;
+    width: inherit;
     object-fit: cover;
     object-position: center;
+    opacity: 0.5;
     position: absolute;
 }
 
@@ -94,7 +95,7 @@ body, html{
 
 
 .features-section{
-    height: 100%;
+    height: 120%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -103,6 +104,8 @@ body, html{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: url(./media/gridbg.png);
+    gap: 5%;
 }
 
 .features-section-heading{
@@ -135,7 +138,7 @@ body, html{
 
 .cards-container{
     width: 75%;
-    height: 50%;
+    height: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,15 +154,70 @@ body, html{
     align-items: center;
     justify-content: center;
     font-size: 120px;
+    box-shadow: 1px 1px 10px #ffdc1b;
+    cursor: pointer;
+    filter: blur(0.1px);
 }
 
 .card-front h1{
     font-family: "extra-bold";
-    font-size: 25px;
+    font-size: 30px;
     font-style: italic;
     color: white;
+    text-align: center;
+    text-shadow: 0.4px 0.4px 10px rgba(0, 0, 0, 0.2);
 }
 
-#cards-container-back{
+.card-back{
     display: none;
+    box-shadow: 1px 1px 20px #ffdc1b;
+    transition: ease-in-out 2.5ms;    
+}
+
+.sample-section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url(./media/gridbg.png);
+}
+
+.sample-section img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+}
+
+.sample-section-heading{
+    z-index: 1;
+    color: white;
+    font-size: 50px;
+    scale: 90%;
+}
+
+.sample-section-heading h1{
+    font-family: "extra-bold";
+    font-style: italic;
+    letter-spacing: -7.5px;
+    font-size: 2em;
+    margin-top: -80px;
+    margin-left: 105px;
+}
+
+.sample-section-heading h2{
+    font-family: "semi-bold";
+    font-style: normal;
+    font-size: 0.8em;
+    letter-spacing: -2.5px;
+}
+
+.sample-section-heading h2:nth-of-type(2){
+    margin-top: -10px;
 }

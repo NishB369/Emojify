@@ -58,11 +58,44 @@ function rocket_btn_animate2(){
 }
 
 let cardFrontList = document.querySelectorAll(".card-front")
-cardFrontList.forEach(function(cardFront){
-  cardFront.addEventListener("mouseenter",function(){
-    gsap.to(cardFront, {
-      duration:0.1,
-      
-    })
+cardFrontList.forEach(function(cardFront, index){
+  cardFront.addEventListener("mouseenter", function(){
+    if(index % 2 === 0) {
+      cardFront.style.display = "none";
+      cardFrontList[index+1].style.display = "flex";
+    }
+  })
+})
+
+cardFrontList.forEach(function(cardFront, index){
+  console.log(index);
+  
+    if([0,1,4,5].includes(index)) {
+      gsap.to(cardFrontList[index],{
+        y:50,
+        duration:1.25,
+        yoyo:true,
+        repeat:-1,
+        ease:"power1"
+      })
+    }
+
+    if([2,3].includes(index)) {
+      gsap.to(cardFrontList[index],{
+        y:-50,
+        duration:1.25,
+        yoyo:true,
+        repeat:-1,
+        ease:"power1"
+      })
+    }
+  })
+
+cardFrontList.forEach(function(cardFront, index){
+  cardFront.addEventListener("mouseleave", function(){
+    if(index % 2 !== 0) {
+      cardFront.style.display = "none";
+      cardFrontList[index-1].style.display = "flex";
+    }
   })
 })
