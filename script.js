@@ -128,3 +128,11 @@ suggestionList.forEach(function(suggestion){
     })
   })
 })
+
+
+gsap.to(document.querySelector(".cta_btn"),{
+  scale:1.1,
+  duration:2,
+  yoyo:true,
+  repeat:-1,
+})
