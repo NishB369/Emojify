@@ -148,11 +148,9 @@ body {
   justify-content: center;
   gap: 5%;
   flex-wrap: wrap;
-  /* border: 1px solid red; */
 }
 
 .card-front {
-  /* flex: 1 1 1 33%; */
   height: 100%;
   width: 27.5%;
   border-radius: 10px;
@@ -280,15 +278,12 @@ body {
 .suggestions-area {
   height: 7.5%;
   width: 50%;
-  /* border: 1px solid red; */
   z-index: 1;
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-wrap: wrap; */
   gap: 1%;
-  /* border: 1px solid red; */
 }
 
 .suggestion {
@@ -308,7 +303,6 @@ body {
   z-index: 1;
   font-family: "regular";
   color: white;
-  /* border: 1px solid red; */
   margin-top: 2%;
   text-shadow: 0.4px 0.4px 10px rgba(0, 0, 0, 0.201);
 }
@@ -342,7 +336,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid red; */
   background-color: #ffdc1b;
   border-radius: 10px;
   opacity: 0.5;
@@ -352,8 +345,8 @@ body {
 .result-area textarea {
   height: 100%;
   width: 90%;
-  background-color: transparent;
-  /* border: none; */
+  background-color: white;
+  border: none;
   resize: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -363,7 +356,7 @@ body {
   padding: 3.5% 5%;
   font-family: "semi-bold";
   font-size: 14px;
-  color: white;
+  color: black;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.18);
   cursor:not-allowed;
 }
@@ -376,7 +369,7 @@ body {
 .result-area div {
   height: 100%;
   width: 10%;
-  background-color: white;
+  background-color: #ffdc1b;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   display: flex;

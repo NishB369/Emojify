@@ -102,10 +102,6 @@ cardFrontList.forEach(function(cardFront, index){
 
 
 const generate_btn = document.querySelector(".text-input-area div")
-generate_btn.addEventListener("click",function(){
-  rocket_btn_animate(generate_btn,1.1,"🔥")
-})
-
 const textArea = document.querySelector("textarea")
 
 textArea.addEventListener("click",function(){
@@ -155,4 +151,36 @@ suggestionList.forEach(function(suggestion){
       ease:"power3"
     })
   })
+})
+
+const copy_btn = document.querySelector(".result-area div")
+copy_btn.addEventListener("click",function(){
+  rocket_btn_animate(copy_btn,1.1,"📨")
+  alert("Text copied to clipboard!")
+  let textToCopy = document.querySelector(".result-area textarea").value;
+  navigator.clipboard.writeText(textToCopy);
+})
+
+textArea.addEventListener("click",function(){
+  rocket_btn_animate2(copy_btn,1,'📋')
+})
+
+document.addEventListener("click", function(event) {
+  if (!copy_btn.contains(event.target)) {
+      rocket_btn_animate2(copy_btn, 1, "📋"); 
+  }
+});
+
+generate_btn.addEventListener("click",function(){
+  if (textArea.value===''){
+  alert("Please enter some text before generating results.");
+  }
+  else{
+    rocket_btn_animate(generate_btn,1.1,"🔥")
+    document.querySelector(".result-area").style.opacity=1,
+    document.querySelector(".result-area").style.cursor="auto",
+    document.querySelector(".result-area textarea").style.cursor="auto",
+    document.querySelector(".result-area div").style.cursor="pointer"
+    document.querySelector(".result-area textarea").value=textArea.value
+  }
 })
