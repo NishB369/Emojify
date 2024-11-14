@@ -33,24 +33,24 @@ const emojiDictionary = {
 
 const rocket_btn = document.querySelector(".hero-section-heading div")
 rocket_btn.addEventListener("mouseenter",function(){
-  rocket_btn_animate(rocket_btn,1.2)
+  rocket_btn_animate(rocket_btn,1.2,'🔥')
 })
 rocket_btn.addEventListener("mouseleave",function(){
-  rocket_btn_animate2(rocket_btn,1)
+  rocket_btn_animate2(rocket_btn,1,'🚀')
 })
 
-function rocket_btn_animate(x,scale){
+function rocket_btn_animate(x,scale,emote){
   gsap.to(x,{
-    textContent:"🔥",
+    textContent:emote,
     duratio:0.5,
     ease:"power4",
     scale:scale
   })
 }
 
-function rocket_btn_animate2(x,scale){
+function rocket_btn_animate2(x,scale,emote){
   gsap.to(x,{
-    textContent:"🚀",
+    textContent:emote,
     duratio:0.5,
     ease:"power4",
     scale:scale
@@ -103,27 +103,29 @@ cardFrontList.forEach(function(cardFront, index){
 
 const generate_btn = document.querySelector(".text-input-area div")
 generate_btn.addEventListener("click",function(){
-  rocket_btn_animate(generate_btn,1.1)
+  rocket_btn_animate(generate_btn,1.1,"🔥")
 })
 
 const textArea = document.querySelector("textarea")
 
 textArea.addEventListener("click",function(){
-  rocket_btn_animate2(generate_btn,1)
+  rocket_btn_animate2(generate_btn,1,'↗️')
 })
 
 document.addEventListener("click", function(event) {
   if (!generate_btn.contains(event.target)) {
-      rocket_btn_animate2(generate_btn, 1); 
+      rocket_btn_animate2(generate_btn, 1, "↗️"); 
   }
 });
 
 let suggestionList = document.querySelectorAll(".suggestion")
 suggestionList.forEach(function(suggestion){
-  suggestion.addEventListener("click",function(){
-    gsap.to(textArea,{
-      value:(suggestion.textContent).trim(),
-      duration:0.1,
+  suggestion.addEventListener("click",function(e){
+    textArea.value=(suggestion.textContent).trim()
+    gsap.from(textArea,{
+      y:e.y/100,
+      x:e.x/100,
+      duration:.4,
       ease:"power4"
     })
   })
@@ -135,4 +137,22 @@ gsap.to(document.querySelector(".cta_btn"),{
   duration:2,
   yoyo:true,
   repeat:-1,
+})
+
+suggestionList.forEach(function(suggestion){
+  suggestion.addEventListener("mouseenter",function(){
+    gsap.to(suggestion,{
+      backgroundColor:"#ffdc1b",
+      duration:0.2,
+      ease:"power3"
+    })
+  })
+
+  suggestion.addEventListener("mouseleave",function(){
+    gsap.to(suggestion,{
+      backgroundColor:"#fff",
+      duration:0.2,
+      ease:"power3"
+    })
+  })
 })
